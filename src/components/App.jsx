@@ -17,11 +17,13 @@ export class App extends React.Component {
   };
 
   componentDidMount() {
-    window.addEventListener("keyup", (e) => this.KeyPress(e));
+    const body = document.querySelector('body')
+    body.addEventListener("keyup", (e) => this.KeyPress(e));
   }
 
   componentWillMount() {
-    window.removeEventListener("keyup", (e) => this.KeyPress(e));
+    const body = document.querySelector('body')
+    body.removeEventListener("keyup", (e) => this.KeyPress(e));
   }
 
   KeyPress(e) {
@@ -48,7 +50,7 @@ export class App extends React.Component {
   };
 
   onCloseModal = () => {
-    this.setState({ isModalVisible: !this.state.isModalVisible });
+    this.setState({ isModalVisible: !this.state.isModalVisible, login: '', password: ''});
   };
 
   showModal = (e) => {
