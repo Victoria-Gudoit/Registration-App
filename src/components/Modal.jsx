@@ -20,13 +20,16 @@ export class Modal extends React.Component {
 
 
   render() {
+    const values = [{label: 'Ваш логин:', value: this.context.login}, {label: 'Ваш пароль:', value: this.context.password}, {label: 'Ваш пол:', value: this.props.gender}]
     const modal = (
       <div key={this.props.onCloseModal} className={css.modal}>
         <div className={css.info}>
         <ul className={css.list}>
-          <li className={css.item}>Ваш логин: {this.context.login}</li>
-          <li className={css.item}>Ваш пароль: {this.context.password}</li>
-          <li className={css.item}>Ваш пол: {this.props.gender}</li>
+          {values.map(item => {
+            return (
+                   <li>{item.label} {item.value}</li>
+            )
+          })}
         </ul>
         </div>
         <p>Регистрация прошла успешна!</p>
