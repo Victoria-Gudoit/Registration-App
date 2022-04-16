@@ -20,7 +20,7 @@
 
 
 .btn {
-    margin-top: 35px;
+    margin-top: 15px;
     border-radius: 4px;
     padding: 10px 20px;
     background: #fff;
@@ -47,5 +47,14 @@
 
 p {
     margin: 0;
-    margin-top: 10px;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    gap: 20px;
+}
+
+.item {
+    margin-bottom: 5px;
 }

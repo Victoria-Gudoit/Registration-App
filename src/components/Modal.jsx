@@ -3,24 +3,31 @@ import css from "./modal.module.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import { RegistrationCtx } from "./Ctx";
-import { v4 as uuidv4 } from "uuid";
 
 export class Modal extends React.Component {
   static contextType = RegistrationCtx;
 
+  
+  componentDidMount() {
+    const body = document.querySelector('body')
+    body.addEventListener("keyup", this.props.onCloseModall);
+  }
+
+  componentWillMount() {
+    const body = document.querySelector('body')
+    body.removeEventListener("keyup", this.props.onCloseModall);
+  }
+
+
   render() {
     const modal = (
-      <div className={css.modal}>
+      <div key={this.props.onCloseModall} className={css.modal}>
         <div className={css.info}>
-          {["Ваш логин:", "Ваш пароль:"].map((label) => (
-            <div key={uuidv4()}>
-              {this.context.values.map((item) => (
-                <p key={uuidv4()}>
-                  {label} {label === "Ваш логин:" ? item.login : item.password}
-                </p>
-              ))}
-            </div>
-          ))}
+        <ul className={css.list}>
+          <li className={css.item}>Ваш логин: {this.context.login}</li>
+          <li className={css.item}>Ваш пароль: {this.context.password}</li>
+          <li className={css.item}>Ваш пол: {this.props.gender}</li>
+        </ul>
         </div>
         <p>Регистрация прошла успешна!</p>
         <button onClick={this.props.onCloseModal} className={css.btn}>

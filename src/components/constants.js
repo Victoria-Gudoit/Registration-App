@@ -1,9 +1,9 @@
-export const FILTER_STATUSES = {
-  FEMALE: "женский",
-  MALE: "мужской",
+export const GENGER_STATUSES = {
+  FEMALE: "female",
+  MALE: "male",
 };
 
-export const filterOptions = [
-  { value: FILTER_STATUSES.FEMALE, label: "женский" },
-  { value: FILTER_STATUSES.MALE, label: "мужской" },
+export const genderOptions = [
+  { value: GENGER_STATUSES.FEMALE, label: "женский" },
+  { value: GENGER_STATUSES.MALE, label: "мужской" },
 ];
