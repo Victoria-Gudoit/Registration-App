@@ -89,7 +89,7 @@ export class App extends React.Component {
             </div>
             <button className={css.btn} onClick={this.clickHandler} type="submit">Зарегистрироваться</button>
           </form>
-          {isModalVisible && (<ErrorBoundary><Modal gender={this.FindGenderLabel().label} onCloseModall={this.onCloseModal} onCloseModal={this.onCloseModal}/></ErrorBoundary>)}
+          {isModalVisible && (<ErrorBoundary><Modal gender={this.FindGenderLabel().label}  onCloseModal={this.onCloseModal}/></ErrorBoundary>)}
         </RegistrationCtx.Provider>
       </div>
     );

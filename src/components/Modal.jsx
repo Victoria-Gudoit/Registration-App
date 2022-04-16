@@ -10,18 +10,18 @@ export class Modal extends React.Component {
   
   componentDidMount() {
     const body = document.querySelector('body')
-    body.addEventListener("keyup", this.props.onCloseModall);
+    body.addEventListener("keyup", this.props.onCloseModal);
   }
 
   componentWillMount() {
     const body = document.querySelector('body')
-    body.removeEventListener("keyup", this.props.onCloseModall);
+    body.removeEventListener("keyup", this.props.onCloseModal);
   }
 
 
   render() {
     const modal = (
-      <div key={this.props.onCloseModall} className={css.modal}>
+      <div key={this.props.onCloseModal} className={css.modal}>
         <div className={css.info}>
         <ul className={css.list}>
           <li className={css.item}>Ваш логин: {this.context.login}</li>
